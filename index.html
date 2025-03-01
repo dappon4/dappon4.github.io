@@ -9,7 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <!-- Remove or comment out the original header -->
+    <!-- <header>
         <div class="container">
             <nav>
                 <div class="logo">DL</div>
@@ -28,7 +29,44 @@
                 </div>
             </nav>
         </div>
-    </header>
+    </header> -->
+
+    <!-- Side navigation - with clickable labels -->
+    <div class="side-nav" id="sideNav">
+        <div class="side-nav-inner">
+            <div class="side-nav-dots">
+                <!-- Add href attributes to help with native navigation -->
+                <div class="side-nav-item" data-section="hero" onclick="document.getElementById('hero').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">
+                    <div class="side-nav-dot"></div>
+                    <div class="side-nav-label">Home</div>
+                </div>
+                <div class="side-nav-item" data-section="about" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">
+                    <div class="side-nav-dot"></div>
+                    <div class="side-nav-label">About</div>
+                </div>
+                <div class="side-nav-item" data-section="experience" onclick="document.getElementById('experience').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">
+                    <div class="side-nav-dot"></div>
+                    <div class="side-nav-label">Experience</div>
+                </div>
+                <div class="side-nav-item" data-section="education" onclick="document.getElementById('education').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">
+                    <div class="side-nav-dot"></div>
+                    <div class="side-nav-label">Education</div>
+                </div>
+                <div class="side-nav-item" data-section="skills" onclick="document.getElementById('skills').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">
+                    <div class="side-nav-dot"></div>
+                    <div class="side-nav-label">Skills</div>
+                </div>
+                <div class="side-nav-item" data-section="projects" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">
+                    <div class="side-nav-dot"></div>
+                    <div class="side-nav-label">Projects</div>
+                </div>
+                <div class="side-nav-item" data-section="contact" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">
+                    <div class="side-nav-dot"></div>
+                    <div class="side-nav-label">Contact</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section id="hero">
         <div class="container">
@@ -61,24 +99,30 @@
                     solutions, whether through programming or collaborative projects. With experience in machine learning, software development, 
                     and a multilingual background, I'm dedicated to making meaningful contributions to the tech world.
                 </p>
-                <div class="personal-info">
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>College Park, MD</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>dahongluo04@gmail.com</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <span>(240) 501-3234</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fab fa-github"></i>
-                        <span><a href="https://github.com/dappon4" target="_blank">github.com/dappon4</a></span>
+                
+                <!-- Core Values Section -->
+                <div class="core-values">
+                    <h3 class="values-title">My Core Values</h3>
+                    <div class="values-container">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4>Creativity</h4>
+                            <p>My passion for creativity began in childhood with LEGO blocks, where I discovered that simple elements could be combined to create complex structures. This translated seamlessly to programming, where I view code as another medium for creative expression. Through hackathons and collaborative projects, I've learned that creativity is about connecting basic elements in innovative ways to develop unique solutions to real-world challenges.</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-hourglass-half"></i>
+                            </div>
+                            <h4>Patience</h4>
+                            <p>Facing complex subjects like machine learning and mathematical modeling taught me that true understanding requires persistence. By methodically exploring background information, iterating through concepts, and seeking mentorship, I've developed the patience to approach problems thoroughly. This patience allows me to look beyond surface-level issues to address root causes, leading to more effective and detailed solutions in my work.</p>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- Removed personal-info section -->
             </div>
         </div>
     </section>
@@ -169,11 +213,18 @@
                 </div>
                 <div class="skill-category">
                     <h3>Machine Learning</h3>
-                    <div class="skill-details">
-                        <p><strong>Libraries:</strong> PyTorch, TensorFlow, Keras, NumPy, scikit-learn, JAX</p>
-                        <p><strong>Data Analysis:</strong> Pandas, MATLAB, seaborn</p>
-                        <p><strong>Architectures:</strong> Transformer, YOLO, Deep Q network</p>
-                        <p>Solid understanding of Machine Learning and data science principles, exploratory data analysis, and data visualization.</p>
+                    <div class="skill-pills">
+                        <span>PyTorch</span>
+                        <span>TensorFlow</span>
+                        <span>Keras</span>
+                        <span>NumPy</span>
+                        <span>scikit-learn</span>
+                        <span>JAX</span>
+                        <span>Pandas</span>
+                        <span>MATLAB</span>
+                        <span>Transformer</span>
+                        <span>YOLO</span>
+                        <span>Deep Q Network</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -241,6 +292,29 @@
                         </div>
                     </div>
                 </div>
+                <!-- New Project: Reinforcement Learning Pacman -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Reinforcement Learning Pacman</h3>
+                        <p class="project-meta">Personal Project, Mar 2024</p>
+                        <p>Designed an AI that autonomously learns to play Pacman using reinforcement learning. Engineered a fully functional Pacman game environment from scratch using Pygame with modular architecture for easy integration with AI agents. Developed a Deep Q Network (DQN) model with PyTorch.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="btn small-btn">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- New Project: Machine Learning Audio Segmentation -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Machine Learning Audio Segmentation</h3>
+                        <p class="project-meta">Group Project, Jan 2024</p>
+                        <p>Won the award for "Best Digital Forensics Related Hack" in Hoya Hacks 2024. Created a web application that can pinpoint the timestamp of specific sounds in videos to accelerate investigation processes. Built and trained an Audio Classification model inspired by YAMNet using PyTorch with custom audio-to-image preprocessing pipeline.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="btn small-btn">Devpost</a>
+                            <a href="#" target="_blank" class="btn small-btn">GitHub</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -282,6 +356,50 @@
         </div>
     </footer>
 
+    <!-- Add debugging element at the bottom of the body -->
+    <div id="debug-panel" style="position:fixed; bottom:0; left:0; background:rgba(0,0,0,0.7); color:white; padding:10px; font-size:12px; z-index:9999; display:none;">
+        <div>Side Nav Visible: <span id="debug-sidenav-visible">Unknown</span></div>
+        <div>Scroll Position: <span id="debug-scroll-pos">0</span></div>
+        <div>Hero Bottom: <span id="debug-hero-bottom">Unknown</span></div>
+    </div>
+
     <script src="js/main.js"></script>
+    <script src="js/nav-fix.js"></script>
+    <script>
+        // Immediately add debug script
+        document.addEventListener('DOMContentLoaded', function() {
+            const debugPanel = document.getElementById('debug-panel');
+            const debugSideNavVisible = document.getElementById('debug-sidenav-visible');
+            const debugScrollPos = document.getElementById('debug-scroll-pos');
+            const debugHeroBottom = document.getElementById('debug-hero-bottom');
+            
+            // Show debug panel with keyboard shortcut (Ctrl+Shift+D)
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.shiftKey && e.key === 'D') {
+                    debugPanel.style.display = debugPanel.style.display === 'none' ? 'block' : 'none';
+                }
+            });
+            
+            // Update debug info
+            function updateDebug() {
+                const sideNav = document.querySelector('.side-nav');
+                const heroSection = document.getElementById('hero');
+                
+                debugSideNavVisible.textContent = window.getComputedStyle(sideNav).display;
+                debugScrollPos.textContent = window.scrollY;
+                
+                if (heroSection) {
+                    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+                    debugHeroBottom.textContent = heroBottom;
+                }
+            }
+            
+            // Update debug info on scroll
+            window.addEventListener('scroll', updateDebug);
+            
+            // Initial update
+            setTimeout(updateDebug, 500);
+        });
+    </script>
 </body>
 </html>

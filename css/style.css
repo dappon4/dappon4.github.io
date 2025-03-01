@@ -9,6 +9,7 @@
     --accent-color: #1abc9c;
     --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     --transition: all 0.3s ease;
+    --primary-color-rgb: 52, 152, 219; /* RGB value for primary color */
 }
 
 * {
@@ -48,14 +49,7 @@ a:hover {
 
 /* Header and Navigation */
 header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
+    display: none;
 }
 
 nav {
@@ -328,37 +322,65 @@ section {
 /* Skills Section */
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .skill-category {
-    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    background-color: white;
+    padding: 25px;
+    height: 100%;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .skill-category h3 {
-    font-size: 22px;
+    margin-top: 0;
     margin-bottom: 15px;
     color: var(--primary-color);
+    font-size: 20px;
 }
 
 .skill-pills {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    margin-top: 15px;
 }
 
 .skill-pills span {
-    background-color: #e9f7fe;
-    color: var(--primary-color);
-    padding: 6px 15px;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    padding: 6px 14px;
     border-radius: 20px;
     font-size: 14px;
-    font-weight: 500;
+    transition: var(--transition);
+}
+
+.skill-pills span:hover {
+    background-color: var(--primary-color);
+    color: white;
 }
 
 .skill-details p {
     margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Projects Section */
@@ -409,13 +431,14 @@ section {
 
 /* Contact Section */
 .contact-content {
-    max-width: 600px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .contact-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 30px;
 }
 
@@ -524,6 +547,11 @@ footer {
     .hero-text h2 {
         font-size: 20px;
     }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -562,5 +590,157 @@ footer {
     .personal-info {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+/* Side Navigation - Updated Style */
+.side-nav {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: block;
+    background-color: transparent; /* Remove background */
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: none; /* Remove box shadow */
+}
+
+.side-nav-inner {
+    display: flex;
+    align-items: center;
+}
+
+.side-nav-dots {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.side-nav-dots::before {
+    content: '';
+    width: 2px;
+    background-color: rgba(var(--primary-color-rgb), 0.3);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.side-nav-item {
+    position: relative;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10; /* Ensure it's above other elements */
+}
+
+.side-nav-dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    transition: var(--transition);
+    cursor: pointer; /* Explicit cursor */
+}
+
+.side-nav-label {
+    position: absolute;
+    right: 25px;
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: transparent; /* Remove background */
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--text-color);
+    white-space: nowrap;
+    transition: var(--transition);
+    opacity: 1; /* Always visible */
+    pointer-events: auto; /* Ensure clickable */
+    box-shadow: none; /* Remove box shadow */
+    cursor: pointer; /* Explicit cursor */
+    z-index: 11; /* Higher z-index than parent */
+}
+
+.side-nav-item:hover .side-nav-dot,
+.side-nav-item.active .side-nav-dot {
+    background-color: var(--secondary-color);
+    transform: scale(1.3);
+}
+
+.side-nav-item:hover .side-nav-label,
+.side-nav-item.active .side-nav-label {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+/* Core Values Section */
+.core-values {
+    margin: 50px 0;
+}
+
+.values-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.values-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.value-card {
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.value-icon {
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.value-card h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.value-card p {
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: left;
+}
+
+/* Responsive adjustments for core values */
+@media screen and (max-width: 768px) {
+    .values-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .value-card {
+        padding: 25px;
     }
 }
