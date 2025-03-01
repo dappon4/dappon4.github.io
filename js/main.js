@@ -90,28 +90,54 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // Highlight active section in side nav
+    // Highlight active section in side nav - improved version
     function highlightNavItem() {
         if (!sideNavItems.length) return;
         
         let currentSection = '';
+        let closestSection = null;
+        let closestDistance = Infinity;
+        
+        // Find the section closest to the viewport center
+        const viewportMiddle = window.scrollY + window.innerHeight / 2;
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
+            const sectionMiddle = sectionTop + sectionHeight / 2;
+            const distance = Math.abs(viewportMiddle - sectionMiddle);
             
-            if (window.scrollY >= sectionTop - 300 && 
-                window.scrollY < sectionTop + sectionHeight - 300) {
+            // If this section is closer to the middle than previous ones
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestSection = section;
                 currentSection = section.id;
             }
         });
         
+        // Apply active class and ensure styles
         sideNavItems.forEach(item => {
+            // First, remove active class from all
             item.classList.remove('active');
+            
+            // Then add it to the appropriate item
             if (item.getAttribute('data-section') === currentSection) {
                 item.classList.add('active');
+                
+                // Force styles on the label for debugging
+                const label = item.querySelector('.side-nav-label');
+                if (label) {
+                    console.log(`Setting active styles for ${currentSection}`);
+                    // This is a more aggressive approach - use inline styles
+                    label.style.fontSize = '14px';
+                    label.style.fontWeight = '500';
+                    label.style.color = 'var(--primary-color)';
+                }
             }
         });
+        
+        // Debug info
+        console.log('Current active section:', currentSection);
     }
     
     // Improved smooth scroll to section when clicking nav item or label

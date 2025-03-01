@@ -99,10 +99,46 @@ nav {
     transition: var(--transition);
 }
 
-/* Hero Section */
+/* Hero Section with Background Image */
 #hero {
     padding: 180px 0 100px;
     background-color: var(--light-bg);
+    position: relative;
+    background-image: url('../assets/header-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+/* Add overlay to make text readable */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+    z-index: 1;
+}
+
+#hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Update text colors for better contrast */
+.hero-text h1 {
+    color: white;
+}
+
+.hero-text h2 {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-text p {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .hero-content {
@@ -112,27 +148,10 @@ nav {
     align-items: center;
 }
 
-.hero-text h1 {
-    font-size: 48px;
-    margin-bottom: 15px;
-    color: var(--text-color);
-}
-
-.hero-text h2 {
-    font-size: 24px;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.hero-text p {
-    font-size: 18px;
-    color: var(--light-text);
-    margin-bottom: 30px;
-}
-
 .cta-buttons {
     display: flex;
     gap: 15px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .btn {
@@ -168,6 +187,26 @@ nav {
 
 .small-btn {
     padding: 8px 16px;
+    font-size: 14px;
+}
+
+/* Resume button styling */
+.resume-btn {
+    background-color: #27ae60; /* A different color to distinguish it */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.resume-btn:hover {
+    background-color: #219653; /* Darker green on hover */
+    color: white;
+    transform: translateY(-2px);
+}
+
+.resume-btn i {
     font-size: 14px;
 }
 
@@ -563,11 +602,13 @@ footer {
     .cta-buttons {
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
     .btn {
         width: 100%;
         text-align: center;
+        margin-bottom: 10px;
     }
 
     .timeline::after {
@@ -657,8 +698,8 @@ footer {
     padding: 5px 10px;
     background-color: transparent; /* Remove background */
     border-radius: 4px;
-    font-size: 14px;
-    color: var(--text-color);
+    font-size: 12px; /* Smaller font size */
+    color: var(--light-text); /* Lighter color when inactive */
     white-space: nowrap;
     transition: var(--transition);
     opacity: 1; /* Always visible */
@@ -677,7 +718,8 @@ footer {
 .side-nav-item:hover .side-nav-label,
 .side-nav-item.active .side-nav-label {
     font-weight: 500;
-    color: var(--primary-color);
+    color: var(--primary-color) !important; /* Ensure color is applied */
+    font-size: 14px !important; /* Force font size when active */
 }
 
 /* Core Values Section */
