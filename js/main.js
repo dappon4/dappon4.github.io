@@ -1,23 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Navigation menu toggle for mobile
+    console.log('DOM fully loaded');
+    
+    // Navigation menu toggle for mobile - Add null checks
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
-    
-    // Close mobile menu when clicking on a link
-    const navItems = document.querySelectorAll('.nav-links a');
-    navItems.forEach(item => {
-        item.addEventListener('click', () => {
-            if (navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                hamburger.classList.remove('active');
-            }
+    // Only add event listeners if elements exist
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
         });
-    });
+        
+        // Close mobile menu when clicking on a link
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
+    }
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -40,41 +45,160 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Header scroll effect
+    // Header scroll effect - Add null check
     const header = document.querySelector('header');
     
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            header.style.height = '60px';
-        } else {
-            header.style.boxShadow = 'none';
-            header.style.height = '70px';
-        }
-    });
-    
-    // Initialize AOS (Animate on Scroll) if you decide to add it later
-    // if (typeof AOS !== 'undefined') {
-    //     AOS.init({
-    //         duration: 800,
-    //         easing: 'ease-in-out',
-    //         once: true
-    //     });
-    // }
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                header.style.height = '60px';
+            } else {
+                header.style.boxShadow = 'none';
+                header.style.height = '70px';
+            }
+        });
+    }
 
     // Debug message to confirm script is running
     console.log('Script loaded and running');
+
+    // Project search functionality - improved version
+    const projectSearch = document.getElementById('projectSearch');
+    const projectsGrid = document.getElementById('projectsGrid');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    // Check if elements exist and log for debugging
+    console.log('Project search element exists:', projectSearch !== null);
+    console.log('Projects grid exists:', projectsGrid !== null);
+    console.log('Project cards found:', projectCards.length);
+    
+    // Search function - fixed version
+    function filterProjects(searchTerm) {
+        // Convert search term to lowercase and trim whitespace
+        searchTerm = searchTerm.toLowerCase().trim();
+        console.log('Filtering projects for:', searchTerm);
+        
+        let resultsFound = false;
+        
+        // Remove any existing "no results" message
+        const existingNoResults = document.querySelector('.no-results');
+        if (existingNoResults) {
+            existingNoResults.remove();
+        }
+        
+        // Loop through all project cards
+        projectCards.forEach(card => {
+            // Get card content
+            const cardTitle = card.querySelector('h3').textContent.toLowerCase();
+            const cardDescription = card.querySelector('p:not(.project-meta)').textContent.toLowerCase();
+            const cardTags = card.getAttribute('data-tags') || '';
+            
+            // If search term is empty, show all cards
+            if (searchTerm === '') {
+                card.style.display = 'flex';
+                resultsFound = true;
+                return;
+            }
+            
+            // Check if search term is in title, description, or tags
+            if (
+                cardTitle.includes(searchTerm) || 
+                cardDescription.includes(searchTerm) || 
+                cardTags.includes(searchTerm)
+            ) {
+                card.style.display = 'flex';
+                resultsFound = true;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        
+        // Show "no results" message if no projects match
+        if (!resultsFound && searchTerm !== '') {
+            const noResultsElement = document.createElement('div');
+            noResultsElement.className = 'no-results';
+            noResultsElement.textContent = `No projects found matching "${searchTerm}"`;
+            projectsGrid.appendChild(noResultsElement);
+        }
+    }
+    
+    // Initialize search functionality once DOM is fully loaded
+    if (projectSearch && projectsGrid) {
+        console.log('Setting up search event listeners');
+        
+        // Add debounce to search for better performance
+        let searchTimeout;
+        projectSearch.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                filterProjects(this.value);
+            }, 300);
+        });
+        
+        // Make tags clickable to filter
+        document.querySelectorAll('.project-tag').forEach(tag => {
+            tag.addEventListener('click', function() {
+                const tagText = this.textContent.toLowerCase();
+                projectSearch.value = tagText;
+                filterProjects(tagText);
+                
+                // Scroll search into view if needed
+                projectSearch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Show clear button when a tag is clicked
+                const clearButton = document.querySelector('.search-clear-btn');
+                if (clearButton) {
+                    clearButton.style.display = 'block';
+                }
+            });
+        });
+        
+        // Add clear search button functionality
+        const searchContainer = document.querySelector('.project-search-container');
+        if (searchContainer) {
+            const clearButton = document.createElement('button');
+            clearButton.className = 'search-clear-btn';
+            clearButton.innerHTML = '&times;';
+            clearButton.style.display = 'none';
+            clearButton.title = 'Clear search';
+            
+            // Add the clear button to the container
+            searchContainer.appendChild(clearButton);
+            
+            // Ensure proper positioning by removing any inline styles that could interfere
+            clearButton.removeAttribute('style');
+            clearButton.style.display = 'none';
+            
+            // Show/hide clear button based on input content
+            projectSearch.addEventListener('input', function() {
+                clearButton.style.display = this.value ? 'block' : 'none';
+            });
+            
+            // Clear search on button click
+            clearButton.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent form submission
+                projectSearch.value = '';
+                filterProjects('');
+                this.style.display = 'none';
+                projectSearch.focus();
+            });
+            
+            // Init clear button visibility
+            clearButton.style.display = projectSearch.value ? 'block' : 'none';
+        }
+        
+        // Run search once on page load to initialize
+        setTimeout(() => {
+            filterProjects('');
+        }, 500);
+    }
 
     // Side navigation functionality - improved scrolling
     const sideNav = document.querySelector('.side-nav');
     const sideNavItems = document.querySelectorAll('.side-nav-item');
     const sections = document.querySelectorAll('section');
     const heroSection = document.getElementById('hero');
-    
-    // Debug check for elements
-    console.log('Side nav exists:', sideNav !== null);
-    console.log('Hero section exists:', heroSection !== null);
-    console.log('Sections:', sections.length);
     
     // Show side nav only after scrolling past hero section - direct approach
     function toggleSideNav() {
@@ -120,24 +244,37 @@ document.addEventListener('DOMContentLoaded', () => {
             // First, remove active class from all
             item.classList.remove('active');
             
-            // Then add it to the appropriate item
+            // Reset all labels and dots to default state
+            const label = item.querySelector('.side-nav-label');
+            const dot = item.querySelector('.side-nav-dot');
+            
+            if (label) {
+                label.style.fontSize = '12px';
+                label.style.fontWeight = 'normal';
+                label.style.color = 'var(--light-text)';
+            }
+            
+            if (dot) {
+                dot.style.transform = 'scale(1)';
+                dot.style.backgroundColor = 'var(--primary-color)';
+            }
+            
+            // Then add active style to the appropriate item
             if (item.getAttribute('data-section') === currentSection) {
                 item.classList.add('active');
                 
-                // Force styles on the label for debugging
-                const label = item.querySelector('.side-nav-label');
                 if (label) {
-                    console.log(`Setting active styles for ${currentSection}`);
-                    // This is a more aggressive approach - use inline styles
                     label.style.fontSize = '14px';
                     label.style.fontWeight = '500';
                     label.style.color = 'var(--primary-color)';
                 }
+                
+                if (dot) {
+                    dot.style.backgroundColor = 'var(--secondary-color)';
+                    dot.style.transform = 'scale(1.3)';
+                }
             }
         });
-        
-        // Debug info
-        console.log('Current active section:', currentSection);
     }
     
     // Improved smooth scroll to section when clicking nav item or label
@@ -155,16 +292,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             const sectionId = item.getAttribute('data-section');
-            console.log('Click on section:', sectionId);
             const targetSection = document.getElementById(sectionId);
             
             if (targetSection) {
-                console.log('Found target section:', targetSection.id);
-                
                 // Calculate position with offset
                 const offset = 80; // Offset from the top
                 const targetPosition = targetSection.offsetTop - offset;
-                console.log('Scrolling to position:', targetPosition);
                 
                 // Scroll smoothly
                 window.scrollTo({
@@ -172,13 +305,42 @@ document.addEventListener('DOMContentLoaded', () => {
                     behavior: 'smooth'
                 });
                 
-                // Update active class manually
+                // Update active class and styles manually
                 sideNavItems.forEach(navItem => {
                     navItem.classList.remove('active');
+                    
+                    // Reset styles for all items
+                    const itemLabel = navItem.querySelector('.side-nav-label');
+                    const itemDot = navItem.querySelector('.side-nav-dot');
+                    
+                    if (itemLabel) {
+                        itemLabel.style.fontSize = '12px';
+                        itemLabel.style.fontWeight = 'normal';
+                        itemLabel.style.color = 'var(--light-text)';
+                    }
+                    
+                    if (itemDot) {
+                        itemDot.style.transform = 'scale(1)';
+                        itemDot.style.backgroundColor = 'var(--primary-color)';
+                    }
                 });
+                
+                // Add active class and styles to clicked item
                 item.classList.add('active');
-            } else {
-                console.error('Target section not found:', sectionId);
+                
+                const activeLabel = item.querySelector('.side-nav-label');
+                const activeDot = item.querySelector('.side-nav-dot');
+                
+                if (activeLabel) {
+                    activeLabel.style.fontSize = '14px';
+                    activeLabel.style.fontWeight = '500';
+                    activeLabel.style.color = 'var(--primary-color)';
+                }
+                
+                if (activeDot) {
+                    activeDot.style.backgroundColor = 'var(--secondary-color)';
+                    activeDot.style.transform = 'scale(1.3)';
+                }
             }
         };
         
@@ -202,18 +364,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // Initial calls
-    toggleSideNav();
-    highlightNavItem();
-    
-    // Add scroll event listener
-    window.addEventListener('scroll', function() {
+    if (sideNav && heroSection) {
         toggleSideNav();
         highlightNavItem();
-    });
-    
-    // Log section IDs for debugging
-    console.log('Section IDs:');
-    sections.forEach(section => {
-        console.log(section.id, section.offsetTop);
-    });
+        
+        // Add scroll event listener
+        window.addEventListener('scroll', function() {
+            toggleSideNav();
+            highlightNavItem();
+        });
+    }
 });

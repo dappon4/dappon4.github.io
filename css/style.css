@@ -7,7 +7,7 @@
     --light-bg: #f8f9fa;
     --border-color: #e0e0e0;
     --accent-color: #1abc9c;
-    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     --transition: all 0.3s ease;
     --primary-color-rgb: 52, 152, 219; /* RGB value for primary color */
 }
@@ -101,7 +101,7 @@ nav {
 
 /* Hero Section with Background Image */
 #hero {
-    padding: 180px 0 100px;
+    padding: 260px 0 160px; /* Increased from 180px 0 100px to 220px 0 160px */
     background-color: var(--light-bg);
     position: relative;
     background-image: url('../assets/header-bg.jpg');
@@ -229,13 +229,13 @@ nav {
 
 /* Section Styling */
 section {
-    padding: 100px 0;
+    padding: 100px 0; /* Reduced from 100px to 70px */
 }
 
 .section-title {
     font-size: 32px;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 60px; /* Reduced from 60px to 40px */
     position: relative;
 }
 
@@ -361,8 +361,8 @@ section {
 /* Skills Section */
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -373,7 +373,7 @@ section {
     box-shadow: var(--card-shadow);
     transition: var(--transition);
     background-color: white;
-    padding: 25px;
+    padding: 20px;
     height: 100%;
 }
 
@@ -397,17 +397,18 @@ section {
 }
 
 .skill-pills span {
-    background-color: var(--light-bg);
-    color: var(--text-color);
+    background-color: rgba(var(--primary-color-rgb), 0.1); /* Match project tag background */
+    color: var(--primary-color); /* Match project tag text color */
     padding: 6px 14px;
-    border-radius: 20px;
+    border-radius: 8px; /* Match project link button corner rounding */
     font-size: 14px;
     transition: var(--transition);
 }
 
+/* Remove hover effect for skill pills */
 .skill-pills span:hover {
-    background-color: var(--primary-color);
-    color: white;
+    color: var(--primary-color); /* Keep original color on hover */
+    background-color: rgba(var(--primary-color-rgb), 0.1); /* Keep original background on hover */
 }
 
 .skill-details p {
@@ -415,7 +416,13 @@ section {
     color: var(--text-color);
 }
 
-/* Responsive design for smaller screens */
+/* Responsive design for skills section */
+@media (max-width: 1200px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .skills-container {
         grid-template-columns: 1fr;
@@ -425,8 +432,68 @@ section {
 /* Projects Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 350px));
     gap: 30px;
+    justify-content: center;
+}
+
+/* Project search bar */
+.project-search-container {
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-search-input {
+    width: 100%;
+    padding: 12px 20px;
+    padding-right: 40px; /* Add space for clear button */
+    border-radius: 30px;
+    border: 1px solid var(--border-color);
+    font-size: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.project-search-input:focus {
+    outline: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.search-clear-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #999;
+    display: none;
+    z-index: 2;
+    height: 28px;
+    width: 28px;
+    line-height: 28px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+}
+
+.search-clear-btn:hover {
+    color: var(--primary-color);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.search-info {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--light-text);
 }
 
 .project-card {
@@ -449,6 +516,8 @@ section {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    position: relative;
+    min-height: 340px; /* Minimum height for cards */
 }
 
 .project-content h3 {
@@ -467,16 +536,76 @@ section {
 .project-content p {
     margin-bottom: 20px;
     color: var(--text-color);
-    height: auto; /* Fixed height for description */
     overflow: hidden;
     display: -webkit-box;
+    -webkit-line-clamp: 10; /* Limit to approximately 5 lines */
     -webkit-box-orient: vertical;
+    max-height: 200px; /* Fixed height for description */
 }
 
+/* Container for both links and tags */
+.project-footer {
+    margin-top: auto;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Project tags - moved up in order */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 5px; /* Add space below tags */
+}
+
+/* Project links - moved below tags */
 .project-links {
     display: flex;
     gap: 10px;
-    margin-top: auto; /* Push links to bottom */
+    flex-wrap: wrap;
+    margin-top: 10px; /* Add spacing between tags and links */
+}
+
+.project-links a.btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 6px 16px;
+    font-size: 14px;
+    border-radius: 8px; /* More square corners */
+    text-align: center;
+    transition: var(--transition);
+    border: none;
+}
+
+.project-links a.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-tag {
+    background-color: rgba(var(--primary-color-rgb), 0.1);
+    color: var(--primary-color);
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.project-tag:hover {
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    color: var(--light-text);
+    font-size: 18px;
 }
 
 /* Contact Section */
@@ -489,23 +618,30 @@ section {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 40px;
 }
 
 .contact-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 15px;
+    min-width: 200px;
 }
 
 .contact-item i {
     font-size: 24px;
     color: var(--primary-color);
+    margin-top: 5px;
 }
 
 .contact-item h3 {
     font-size: 18px;
     margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.contact-item p {
+    color: var(--text-color);
 }
 
 /* Footer */
@@ -583,7 +719,7 @@ footer {
     }
 
     section {
-        padding: 70px 0;
+        padding: 50px 0; /* Reduced from 70px to 50px for mobile */
     }
 
     .section-title {
@@ -720,22 +856,9 @@ footer {
     z-index: 11; /* Higher z-index than parent */
 }
 
-.side-nav-item:hover .side-nav-dot,
-.side-nav-item.active .side-nav-dot {
-    background-color: var(--secondary-color);
-    transform: scale(1.3);
-}
-
-.side-nav-item:hover .side-nav-label,
-.side-nav-item.active .side-nav-label {
-    font-weight: 500;
-    color: var(--primary-color) !important; /* Ensure color is applied */
-    font-size: 14px !important; /* Force font size when active */
-}
-
 /* Core Values Section */
 .core-values {
-    margin: 50px 0;
+    margin: 30px 0; /* Reduced from 50px to 30px */
 }
 
 .values-title {
