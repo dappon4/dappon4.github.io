@@ -264,6 +264,16 @@
                 </div>
                 <div class="project-card">
                     <div class="project-content">
+                        <h3>Mathematical Figure Transcriber VLM</h3>
+                        <p class="project-meta">Group Project, Dec 2024</p>
+                        <p>Collected and cleaned a dataset of 788 mathematical images and corresponding transcriptions from the Mathverse dataset. Fine-tuned Llama 3.2 11B to improve the accuracy of transcribing mathematical figures, including complex handwritten notes and digital math figures.</p>
+                        <div class="project-links">
+                            <a href="https://drive.google.com/file/d/1iED5CNDGjr7HGID_SiBL5QXujVLOpkYC/view?usp=sharing" target="_blank" class="btn small-btn">Presentation</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
                         <h3>Agent-Based ELMS Copilot</h3>
                         <p class="project-meta">Group Project, Oct 2024</p>
                         <p>Grand prize winner at hackUMBC 2024. Created a multi-agent RAG system with hallucination prevention and built a study suggestion model using PyTorch trained on synthetic data.</p>
@@ -271,6 +281,37 @@
                             <a href="https://devpost.com/software/to-be-decided-og94ij" target="_blank" class="btn small-btn">Devpost</a>
                             <a href="https://github.com/NSP909/hackUMBC" target="_blank" class="btn small-btn">GitHub</a>
                         </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Embedded Conditional GAN</h3>
+                        <p class="project-meta">Personal Project, Oct 2024</p>
+                        <p>Recreated Generated Adversarial Network from the original paper. Improved the model by adding an Embedding Layer to generate images of arbitrary classes. Created a system that creates a seamless image transition video by gradually modifying the embedded values.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/dappon4/Embedded_Conditional_GAN" target="_blank" class="btn small-btn">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Cat Diffusion Model</h3>
+                        <p class="project-meta">Personal Project, Mar 2025</p>
+                        <p>Created and trained UNet-based diffusion model to generate 32x32 images of cats. Collected and processed cat images from a Kaggle dataset. Trained the model on 30k images for 15 epochs, achieving 0.011 MSE loss with the test data.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Quantum Neural Network</h3>
+                        <p class="project-meta">Personal Project, Mar 2025</p>
+                        <p>Created Quantum Neural Network using Qiskit to perform classification tasks. Trained AutoEncoder to compress input data, enabling the quantum algorithm to capture more useful information. Constructed Quantum Neural Network using ZZFeaturemap and RealAmplitude with 8 qubits system.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Fine-Tuning SAM2</h3>
+                        <p class="project-meta">Personal Project, Mar 2025</p>
+                        <p>Fine-tuned Segmentation Anything Model 2 by Meta to segment brain tumors given the CT scan of brains, achieving 0.64 validation IoU training for 12 epochs. Performed Exploratory Data Analysis using a dataset from Kaggle.</p>
                     </div>
                 </div>
                 <div class="project-card">
@@ -285,6 +326,17 @@
                 </div>
                 <div class="project-card">
                     <div class="project-content">
+                        <h3>Cyberpunk 2077 Steam Review Analysis</h3>
+                        <p class="project-meta">Group Project, May 2024</p>
+                        <p>Performed exploratory data analysis on steam review data from a Kaggle dataset. Trained DistilBERT model to predict the upvote/downvote from review text, achieving 94% accuracy. Trained Gradient Boosted Tree to regress the future upvotes of a comment with 2.956 MAE loss on test data.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Loldude0/CMSC320-cyberpunk/tree/main" target="_blank" class="btn small-btn">GitHub</a>
+                            <a href="https://loldude0.github.io/CMSC320-cyberpunk/" target="_blank" class="btn small-btn">Report</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
                         <h3>Medical Data Compilation System</h3>
                         <p class="project-meta">Group Project, Feb 2024</p>
                         <p>1st place winner in Hacklytics 2024. Created a web app for managing medical documents with LLM-based pipelines for OCR, translation, and SQL database query handling.</p>
@@ -294,7 +346,17 @@
                         </div>
                     </div>
                 </div>
-                <!-- New Project: Reinforcement Learning Pacman -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Gesture Recognition Control System</h3>
+                        <p class="project-meta">Group Project, Feb 2024</p>
+                        <p>1st Place of Spark of Genius Prize at Hack@CEWIT. Developed JarWiz, an innovative gesture and action recognition software enabling intuitive computer control through hand gestures and voice commands. Integrated Whisper model to support voice commands.</p>
+                        <div class="project-links">
+                            <a href="https://devpost.com/software/jarwiz" target="_blank" class="btn small-btn">Devpost</a>
+                            <a href="https://github.com/Swastik3/Jarvis" target="_blank" class="btn small-btn">GitHub</a>
+                        </div>
+                    </div>
+                </div>
                 <div class="project-card">
                     <div class="project-content">
                         <h3>Reinforcement Learning Pacman</h3>
@@ -305,7 +367,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- New Project: Machine Learning Audio Segmentation -->
                 <div class="project-card">
                     <div class="project-content">
                         <h3>Machine Learning Audio Segmentation</h3>
@@ -366,43 +427,5 @@
     </div>
 
     <script src="js/main.js"></script>
-    <script src="js/nav-fix.js"></script>
-    <script src="js/nav-debug.js"></script>
-    <script>
-        // Immediately add debug script
-        document.addEventListener('DOMContentLoaded', function() {
-            const debugPanel = document.getElementById('debug-panel');
-            const debugSideNavVisible = document.getElementById('debug-sidenav-visible');
-            const debugScrollPos = document.getElementById('debug-scroll-pos');
-            const debugHeroBottom = document.getElementById('debug-hero-bottom');
-            
-            // Show debug panel with keyboard shortcut (Ctrl+Shift+D)
-            document.addEventListener('keydown', function(e) {
-                if (e.ctrlKey && e.shiftKey && e.key === 'D') {
-                    debugPanel.style.display = debugPanel.style.display === 'none' ? 'block' : 'none';
-                }
-            });
-            
-            // Update debug info
-            function updateDebug() {
-                const sideNav = document.querySelector('.side-nav');
-                const heroSection = document.getElementById('hero');
-                
-                debugSideNavVisible.textContent = window.getComputedStyle(sideNav).display;
-                debugScrollPos.textContent = window.scrollY;
-                
-                if (heroSection) {
-                    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-                    debugHeroBottom.textContent = heroBottom;
-                }
-            }
-            
-            // Update debug info on scroll
-            window.addEventListener('scroll', updateDebug);
-            
-            // Initial update
-            setTimeout(updateDebug, 500);
-        });
-    </script>
 </body>
 </html>
