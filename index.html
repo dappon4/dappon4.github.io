@@ -111,28 +111,6 @@
                     strong modeling with real-world deployment.
                 </p>
                 
-                <!-- Core Values Section -->
-                <div class="core-values">
-                    <h3 class="values-title">My Core Values</h3>
-                    <div class="values-container">
-                        <div class="value-card">
-                            <div class="value-icon">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <h4>Creativity</h4>
-                            <p>My passion for creativity began in childhood with LEGO blocks, where I discovered that simple elements could be combined to create complex structures. This translated seamlessly to programming, where I view code as another medium for creative expression. Through hackathons and collaborative projects, I've learned that creativity is about connecting basic elements in innovative ways to develop unique solutions to real-world challenges.</p>
-                        </div>
-                        
-                        <div class="value-card">
-                            <div class="value-icon">
-                                <i class="fas fa-hourglass-half"></i>
-                            </div>
-                            <h4>Patience</h4>
-                            <p>Facing complex subjects like machine learning and mathematical modeling taught me that true understanding requires persistence. By methodically exploring background information, iterating through concepts, and seeking mentorship, I've developed the patience to approach problems thoroughly. This patience allows me to look beyond surface-level issues to address root causes, leading to more effective and detailed solutions in my work.</p>
-                        </div>
-                    </div>
-                </div>
-                
                 <!-- Removed personal-info section -->
             </div>
         </div>
@@ -289,81 +267,145 @@
     <section id="projects">
         <div class="container">
             <h2 class="section-title">Projects</h2>
+            <div class="projects-toolbar">
+                <label for="project-search" class="sr-only">Search projects</label>
+                <input
+                    type="search"
+                    id="project-search"
+                    class="project-search-input"
+                    placeholder="Search projects by title, tags, or keywords..."
+                    aria-label="Search projects"
+                >
+            </div>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" data-tags="pytorch diffusion unet generative-ai computer-vision">
                     <div class="project-content">
                         <h3>Cat Diffusion Model</h3>
                         <p class="project-meta">Personal Project, Mar 2025</p>
-                        <p>Implemented a diffusion pipeline in PyTorch with a U-Net backbone to generate cat images and study denoising behavior across timesteps.</p>
+                        <p>Implemented a <strong>diffusion pipeline</strong> in <strong>PyTorch</strong> with a <strong>U-Net</strong> backbone to generate cat images and study denoising behavior across timesteps.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">Diffusion</span>
+                            <span class="project-tag">U-Net</span>
+                            <span class="project-tag">Generative AI</span>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-tags="pytorch qiskit quantum-ml autoencoder">
                     <div class="project-content">
                         <h3>Quantum Neural Network</h3>
                         <p class="project-meta">Personal Project, Mar 2025</p>
-                        <p>Built hybrid quantum-classical models using Qiskit feature maps and variational circuits to explore learning behavior on structured datasets.</p>
+                        <p>Built <strong>hybrid quantum-classical models</strong> using <strong>Qiskit</strong> feature maps and variational circuits to explore learning behavior on structured datasets.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">Qiskit</span>
+                            <span class="project-tag">Quantum ML</span>
+                            <span class="project-tag">Autoencoder</span>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-tags="pytorch sam2 segmentation computer-vision">
                     <div class="project-content">
                         <h3>Fine-Tuning SAM2</h3>
                         <p class="project-meta">Personal Project, Mar 2025</p>
-                        <p>Fine-tuned Segment Anything Model 2 on domain-specific segmentation tasks using PyTorch to improve mask quality on challenging inputs.</p>
+                        <p><strong>Fine-tuned SAM2</strong> on domain-specific <strong>segmentation</strong> tasks using <strong>PyTorch</strong> to improve mask quality on challenging inputs.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">SAM2</span>
+                            <span class="project-tag">Segmentation</span>
+                            <span class="project-tag">Computer Vision</span>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-tags="pytorch unsloth llama vlm ocr">
                     <div class="project-content">
                         <h3>Mathematical Figure Transcriber VLM</h3>
                         <p class="project-meta">Personal Project, Dec 2024</p>
-                        <p>Trained and adapted a vision-language model stack using Unsloth + Llama to transcribe mathematical figures and preserve structural meaning.</p>
+                        <p>Trained and adapted a <strong>vision-language model</strong> stack using <strong>Unsloth + Llama</strong> to transcribe mathematical figures and preserve structural meaning.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">Unsloth</span>
+                            <span class="project-tag">Llama</span>
+                            <span class="project-tag">VLM</span>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-tags="pytorch gan embedding generative-ai">
                     <div class="project-content">
                         <h3>Embedded Conditional GAN</h3>
                         <p class="project-meta">Personal Project, Oct 2024</p>
-                        <p>Developed an embedding-conditional GAN architecture in PyTorch for controllable generation with improved latent conditioning.</p>
+                        <p>Developed an <strong>embedding-conditional GAN</strong> architecture in <strong>PyTorch</strong> for controllable generation with improved latent conditioning.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">GAN</span>
+                            <span class="project-tag">Embedding</span>
+                            <span class="project-tag">Generative AI</span>
+                        </div>
                         <div class="project-links">
                             <a href="https://github.com/dappon4" target="_blank" class="btn small-btn">GitHub</a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-tags="lstm sound-event-detection audio-processing pytorch research">
                     <div class="project-content">
                         <h3>LSTM Sound Event Detection Research</h3>
                         <p class="project-meta">Group Project, Dec 2024</p>
-                        <p>Conducted research using LSTM for Sound Event Detection that doesn't rely on future data. Wrote paper as first author, implemented data processing pipeline, and conducted ablation studies.</p>
+                        <p>Conducted research using <strong>LSTM</strong> for <strong>Sound Event Detection</strong> that doesn't rely on future data. Wrote paper as first author, implemented data processing pipeline, and conducted ablation studies.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">LSTM</span>
+                            <span class="project-tag">Audio Processing</span>
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">Research</span>
+                        </div>
                         <div class="project-links">
                             <a href="https://github.com/dappon4/SED_LSTM" target="_blank" class="btn small-btn">GitHub</a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-tags="rag multi-agent llm flask react pytorch hackathon">
                     <div class="project-content">
                         <h3>Agent-Based ELMS Copilot</h3>
                         <p class="project-meta">Group Project, Oct 2024</p>
-                        <p>Grand prize winner at hackUMBC 2024. Created a multi-agent RAG system with hallucination prevention and built a study suggestion model using PyTorch trained on synthetic data.</p>
+                        <p>Grand prize winner at hackUMBC 2024. Created a <strong>multi-agent RAG system</strong> with hallucination prevention and built a study suggestion model using <strong>PyTorch</strong> trained on synthetic data.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">RAG</span>
+                            <span class="project-tag">Multi-Agent</span>
+                            <span class="project-tag">LLM</span>
+                            <span class="project-tag">Hackathon</span>
+                        </div>
                         <div class="project-links">
                             <a href="https://devpost.com/software/to-be-decided-og94ij" target="_blank" class="btn small-btn">Devpost</a>
                             <a href="https://github.com/NSP909/hackUMBC" target="_blank" class="btn small-btn">GitHub</a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-tags="numpy autograd transformer deep-learning framework">
                     <div class="project-content">
                         <h3>NumPy Neural Network</h3>
                         <p class="project-meta">Personal Project, June 2024</p>
-                        <p>Built a PyTorch-inspired deep learning framework using only NumPy with custom layers, AutoGrad-like backpropagation, and full Transformer architecture, achieving 96.2% accuracy on MNIST.</p>
+                        <p>Built a <strong>PyTorch-inspired deep learning framework</strong> using only <strong>NumPy</strong> with custom layers, AutoGrad-like backpropagation, and full <strong>Transformer</strong> architecture, achieving 96.2% accuracy on MNIST.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">NumPy</span>
+                            <span class="project-tag">AutoGrad</span>
+                            <span class="project-tag">Transformer</span>
+                            <span class="project-tag">Framework</span>
+                        </div>
                         <div class="project-links">
                             <a href="https://github.com/dappon4/Neural_Network_Implementation" target="_blank" class="btn small-btn">GitHub</a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-tags="llm sql ocr translation flask react hackathon">
                     <div class="project-content">
                         <h3>Medical Data Compilation System</h3>
                         <p class="project-meta">Group Project, Feb 2024</p>
-                        <p>1st place winner in Hacklytics 2024. Created a web app for managing medical documents with LLM-based pipelines for OCR, translation, and SQL database query handling.</p>
+                        <p>1st place winner in Hacklytics 2024. Created a web app for managing medical documents with <strong>LLM-based pipelines</strong> for <strong>OCR</strong>, translation, and <strong>SQL</strong> database query handling.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">LLM</span>
+                            <span class="project-tag">SQL</span>
+                            <span class="project-tag">OCR</span>
+                            <span class="project-tag">Hackathon</span>
+                        </div>
                         <div class="project-links">
                             <a href="https://devfolio.co/projects/medicompile-32c2" target="_blank" class="btn small-btn">Devfolio</a>
                             <a href="https://github.com/NSP909/Asclepius" target="_blank" class="btn small-btn">GitHub</a>
@@ -371,22 +413,34 @@
                     </div>
                 </div>
                 <!-- New Project: Reinforcement Learning Pacman -->
-                <div class="project-card">
+                <div class="project-card" data-tags="reinforcement-learning dqn pytorch pygame game-ai">
                     <div class="project-content">
                         <h3>Reinforcement Learning Pacman</h3>
                         <p class="project-meta">Personal Project, Mar 2024</p>
-                        <p>Designed an AI that autonomously learns to play Pacman using reinforcement learning. Engineered a fully functional Pacman game environment from scratch using Pygame with modular architecture for easy integration with AI agents. Developed a Deep Q Network (DQN) model with PyTorch.</p>
+                        <p>Designed an AI that autonomously learns to play Pacman using <strong>reinforcement learning</strong>. Engineered a fully functional Pacman game environment from scratch using <strong>Pygame</strong> with modular architecture for easy integration with AI agents. Developed a <strong>Deep Q Network (DQN)</strong> model with <strong>PyTorch</strong>.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Reinforcement Learning</span>
+                            <span class="project-tag">DQN</span>
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">Pygame</span>
+                        </div>
                         <div class="project-links">
                             <a href="https://github.com/dappon4/pacman_rl" target="_blank" class="btn small-btn">GitHub</a>
                         </div>
                     </div>
                 </div>
                 <!-- New Project: Machine Learning Audio Segmentation -->
-                <div class="project-card">
+                <div class="project-card" data-tags="audio-classification yamnet pytorch flask react hackathon">
                     <div class="project-content">
                         <h3>Machine Learning Audio Segmentation</h3>
                         <p class="project-meta">Group Project, Jan 2024</p>
-                        <p>Won "Best Digital Forensics Related Hack" at Hoya Hacks 2024. Developed a web app to pinpoint sound timestamps in videos for faster investigations. Built and trained a YAMNet-inspired audio classifier in PyTorch with a custom audio-to-image preprocessing pipeline.</p>
+                        <p>Won "Best Digital Forensics Related Hack" at Hoya Hacks 2024. Developed a web app to pinpoint sound timestamps in videos for faster investigations. Built and trained a <strong>YAMNet-inspired audio classifier</strong> in <strong>PyTorch</strong> with a custom audio-to-image preprocessing pipeline.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Audio Classification</span>
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">Flask</span>
+                            <span class="project-tag">Hackathon</span>
+                        </div>
                         <div class="project-links">
                             <a href="https://devpost.com/software/ctrl-f-my-audio" target="_blank" class="btn small-btn">Devpost</a>
                             <a href="https://github.com/dappon4/ctrl-F-my-audio" target="_blank" class="btn small-btn">GitHub</a>
@@ -394,6 +448,7 @@
                     </div>
                 </div>
             </div>
+            <p id="project-no-results" class="project-no-results" hidden>No projects match your search.</p>
         </div>
     </section>
 
@@ -494,7 +549,7 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
-                            <p>dahong@umd.edu</p>
+                            <p>dahongluo04@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">

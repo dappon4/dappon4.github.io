@@ -3,16 +3,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    }
     
     // Close mobile menu when clicking on a link
     const navItems = document.querySelectorAll('.nav-links a');
     navItems.forEach(item => {
         item.addEventListener('click', () => {
-            if (navLinks.classList.contains('active')) {
+            if (navLinks && navLinks.classList.contains('active') && hamburger) {
                 navLinks.classList.remove('active');
                 hamburger.classList.remove('active');
             }
@@ -44,6 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('header');
     
     window.addEventListener('scroll', () => {
+        if (!header) return;
+
         if (window.scrollY > 100) {
             header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
             header.style.height = '60px';
@@ -216,4 +220,41 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
         console.log(section.id, section.offsetTop);
     });
+
+    // Project search functionality
+    const projectSearchInput = document.getElementById('project-search');
+    const projectCards = document.querySelectorAll('#projects .project-card');
+    const noProjectResult = document.getElementById('project-no-results');
+
+    function filterProjects() {
+        if (!projectCards.length) return;
+
+        const query = projectSearchInput ? projectSearchInput.value.trim().toLowerCase() : '';
+        let visibleCount = 0;
+
+        projectCards.forEach(card => {
+            const title = card.querySelector('h3')?.textContent || '';
+            const meta = card.querySelector('.project-meta')?.textContent || '';
+            const description = card.querySelector('.project-content p')?.textContent || '';
+            const tags = card.getAttribute('data-tags') || '';
+
+            const searchable = `${title} ${meta} ${description} ${tags}`.toLowerCase();
+            const isVisible = searchable.includes(query);
+
+            card.classList.toggle('project-hidden', !isVisible);
+            if (isVisible) {
+                visibleCount += 1;
+            }
+        });
+
+        if (noProjectResult) {
+            noProjectResult.hidden = visibleCount !== 0;
+        }
+    }
+
+    if (projectSearchInput) {
+        projectSearchInput.addEventListener('input', filterProjects);
+    }
+
+    filterProjects();
 });
