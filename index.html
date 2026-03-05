@@ -60,6 +60,14 @@
                     <div class="side-nav-dot"></div>
                     <div class="side-nav-label">Projects</div>
                 </div>
+                <div class="side-nav-item" data-section="research" onclick="document.getElementById('research').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">
+                    <div class="side-nav-dot"></div>
+                    <div class="side-nav-label">Research</div>
+                </div>
+                <div class="side-nav-item" data-section="highlights" onclick="document.getElementById('highlights').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">
+                    <div class="side-nav-dot"></div>
+                    <div class="side-nav-label">Highlights</div>
+                </div>
                 <div class="side-nav-item" data-section="contact" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">
                     <div class="side-nav-dot"></div>
                     <div class="side-nav-label">Contact</div>
@@ -73,8 +81,8 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Dahong Luo</h1>
-                    <h2>Software Engineer & ML Enthusiast</h2>
-                    <p>Passionate about creating innovative solutions through code and machine learning</p>
+                    <h2>Software Engineer, ML Researcher & Builder</h2>
+                    <p>Computer Science @ UMD focused on audio processing, generative AI, large language models, and computer vision.</p>
                     <div class="cta-buttons">
                         <a href="#projects" class="btn primary-btn">View My Work</a>
                         <a href="#contact" class="btn primary-btn">Get In Touch</a>
@@ -97,10 +105,10 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <p>
-                    I'm a Computer Science student at the University of Maryland with a passion for creative problem-solving and technology. 
-                    My approach combines innovation with patience—I believe in connecting simple elements in innovative ways to develop unique 
-                    solutions, whether through programming or collaborative projects. With experience in machine learning, software development, 
-                    and a multilingual background, I'm dedicated to making meaningful contributions to the tech world.
+                    I'm a Computer Science student at the University of Maryland (Math minor, GPA 3.87/4.0) with hands-on experience across
+                    machine learning research, full-stack software engineering, and hackathon product development.
+                    I currently work on compact neural audio codecs for low-power devices, and I enjoy building practical systems that connect
+                    strong modeling with real-world deployment.
                 </p>
                 
                 <!-- Core Values Section -->
@@ -136,15 +144,27 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
+                    <div class="timeline-date">Sep 2025 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Student Software Engineer</h3>
+                        <h4>University of Maryland, Engineering IT</h4>
+                        <ul>
+                            <li>Developing a platform for university makerspaces to manage equipment access, safety permissions, and machine usage</li>
+                            <li>Implemented Flask backend + React frontend with secure authentication and streamlined student workflows</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
                     <div class="timeline-date">June 2024 - Aug 2024</div>
                     <div class="timeline-content">
                         <h3>Software Engineering Intern</h3>
                         <h4>IZAI Corp</h4>
                         <ul>
-                            <li>Created a RAG system using BM42 Hybrid Search, with Flask and Llama Index</li>
-                            <li>Deployed an Azure web app with GitHub Actions CI/CD</li>
-                            <li>Helped the development of the TTS model from an open-source model MetaVoice</li>
-                            <li>Authored and published multiple in-depth technical blogs, focusing on AI tools and Machine Learning techniques</li>
+                            <li>Designed and implemented a RAG system using BM42 Hybrid Search with Flask + LlamaIndex</li>
+                            <li>Deployed a production React/Flask app on Azure using GitHub Actions CI/CD</li>
+                            <li>Contributed to multilingual TTS by fine-tuning MetaVoice on the Japanese ReazonSpeech dataset</li>
+                            <li>Performed preprocessing, augmentation, and quantization to improve robustness and inference speed</li>
                         </ul>
                     </div>
                 </div>
@@ -155,8 +175,9 @@
                         <h3>Software Engineering Intern</h3>
                         <h4>InfoDeliver Corp</h4>
                         <ul>
-                            <li>Based on an open-source project, developed an LLM agent using GPT-4 Vision, which analyzes the screen and takes appropriate actions according to the instructions</li>
-                            <li>Annotated data and trained YOLOv7 model to detect web components such as buttons and input boxes</li>
+                            <li>Developed an LLM-based agentic automation pipeline with GPT-4 Vision for UI perception and autonomous action</li>
+                            <li>Annotated and curated YOLOv7 data for high-precision web element detection (buttons, text boxes, dropdowns)</li>
+                            <li>Integrated perception, reasoning, and action modules with real-time voice interaction for dynamic task updates</li>
                         </ul>
                     </div>
                 </div>
@@ -174,8 +195,8 @@
                     <div class="timeline-content">
                         <h3>University of Maryland, College Park</h3>
                         <h4>Bachelor's program, Computer Science major, Math minor</h4>
-                        <p>Honors Program, GPA of 3.81</p>
-                        <p>Dean's List (Fall 2023 & Spring 2024)</p>
+                        <p>Honors Program, GPA 3.87/4.0</p>
+                        <p>Expected Graduation: May 2026</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -183,7 +204,7 @@
                     <div class="timeline-date">Apr 2023 - Aug 2023</div>
                     <div class="timeline-content">
                         <h3>University of Tokyo</h3>
-                        <h4>Bachelor's program, Science</h4>
+                        <h4>Bachelor's program, Natural Sciences (Transferred)</h4>
                     </div>
                 </div>
             </div>
@@ -195,17 +216,21 @@
             <h2 class="section-title">Skills</h2>
             <div class="skills-container">
                 <div class="skill-category">
-                    <h3>Lingual Skills</h3>
+                    <h3>Interests</h3>
                     <div class="skill-pills">
-                        <span>Japanese</span>
-                        <span>English</span>
-                        <span>Mandarin</span>
+                        <span>Audio Processing</span>
+                        <span>Signal Processing</span>
+                        <span>Generative AI</span>
+                        <span>Large Language Models</span>
+                        <span>Computer Vision</span>
+                        <span>Natural Language Processing</span>
+                        <span>Quantum Machine Learning</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Programming Languages</h3>
+                    <h3>Languages</h3>
                     <div class="skill-pills">
-                        <span>Python (5+ years)</span>
+                        <span>Python (7+ years)</span>
                         <span>C</span>
                         <span>C++</span>
                         <span>Java</span>
@@ -219,14 +244,19 @@
                         <span>PyTorch</span>
                         <span>TensorFlow</span>
                         <span>Keras</span>
+                        <span>Qiskit</span>
+                        <span>PennyLane</span>
                         <span>NumPy</span>
                         <span>scikit-learn</span>
                         <span>JAX</span>
-                        <span>Pandas</span>
+                        <span>pandas</span>
                         <span>MATLAB</span>
-                        <span>Transformer</span>
+                        <span>Transformers</span>
                         <span>YOLO</span>
-                        <span>Deep Q Network</span>
+                        <span>Reinforcement Learning</span>
+                        <span>Llama</span>
+                        <span>LangChain</span>
+                        <span>Unsloth</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -244,6 +274,14 @@
                         <span>Hugging Face</span>
                     </div>
                 </div>
+                <div class="skill-category">
+                    <h3>Languages I Speak</h3>
+                    <div class="skill-pills">
+                        <span>Japanese</span>
+                        <span>English</span>
+                        <span>Mandarin</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -252,6 +290,44 @@
         <div class="container">
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Cat Diffusion Model</h3>
+                        <p class="project-meta">Personal Project, Mar 2025</p>
+                        <p>Implemented a diffusion pipeline in PyTorch with a U-Net backbone to generate cat images and study denoising behavior across timesteps.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Quantum Neural Network</h3>
+                        <p class="project-meta">Personal Project, Mar 2025</p>
+                        <p>Built hybrid quantum-classical models using Qiskit feature maps and variational circuits to explore learning behavior on structured datasets.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Fine-Tuning SAM2</h3>
+                        <p class="project-meta">Personal Project, Mar 2025</p>
+                        <p>Fine-tuned Segment Anything Model 2 on domain-specific segmentation tasks using PyTorch to improve mask quality on challenging inputs.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Mathematical Figure Transcriber VLM</h3>
+                        <p class="project-meta">Personal Project, Dec 2024</p>
+                        <p>Trained and adapted a vision-language model stack using Unsloth + Llama to transcribe mathematical figures and preserve structural meaning.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Embedded Conditional GAN</h3>
+                        <p class="project-meta">Personal Project, Oct 2024</p>
+                        <p>Developed an embedding-conditional GAN architecture in PyTorch for controllable generation with improved latent conditioning.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/dappon4" target="_blank" class="btn small-btn">GitHub</a>
+                        </div>
+                    </div>
+                </div>
                 <div class="project-card">
                     <div class="project-content">
                         <h3>LSTM Sound Event Detection Research</h3>
@@ -321,6 +397,94 @@
         </div>
     </section>
 
+    <section id="research">
+        <div class="container">
+            <h2 class="section-title">Research Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Oct 2025 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Student Researcher, iCoSMoS Lab</h3>
+                        <h4>University of Maryland · Prof. Nirupam Roy</h4>
+                        <ul>
+                            <li>Developing compact neural audio codecs optimized for low-power microcontrollers</li>
+                            <li>Focusing on quantization and lightweight architectures for real-time compression/reconstruction</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Jun 2025 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Research Assistant</h3>
+                        <h4>University of Rochester · Prof. Zhiyao Duan</h4>
+                        <ul>
+                            <li>Integrated psychoacoustic codec ideas (MP3/OGG) into neural audio pipelines with Python tooling</li>
+                            <li>Developing U-Net based language-queried audio separation with joint audio-language embeddings</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Apr 2025 - Sep 2025</div>
+                    <div class="timeline-content">
+                        <h3>Research Assistant, VITA Lab</h3>
+                        <h4>UT Austin · Mentored by Hezhen Hu</h4>
+                        <ul>
+                            <li>Worked on PGSR-based 3D human reconstruction and proposed a Gaussian-Splatting-inspired term</li>
+                            <li>Built testing pipelines that reduced iteration counts by ~80% while improving detail fidelity</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Feb 2025 - Sep 2025</div>
+                    <div class="timeline-content">
+                        <h3>Research Assistant</h3>
+                        <h4>University of Maryland · Prof. Leo Zhicheng Liu</h4>
+                        <ul>
+                            <li>Explored GenAI-based research assistance and built RAG-based writing assistant workflows</li>
+                            <li>Built metadata-driven graph re-ranking to improve retrieval quality in an interactive UI</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="highlights">
+        <div class="container">
+            <h2 class="section-title">Hackathons & Workshops</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <h3>HackUMBC 2024</h3>
+                    <p>Grand Prize · Built an agent-based ELMS copilot with multi-check RAG and grade-aware study recommendations.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Hacklytics 2024</h3>
+                    <p>1st Place (Elevance Challenge) · Developed multilingual medical data pipelines from OCR and retrieval to SQL reasoning.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>HoyaHacks 2024</h3>
+                    <p>1st Place (Digital Forensics) · Built an audio event detector and React/Flask investigative web app.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Hack@CEWIT 2024</h3>
+                    <p>1st Place (Spark of Genius) · Created JarWiz for hybrid hand-gesture + voice-based computer control.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>LLM Fine-Tuning Workshop</h3>
+                    <p>Co-presenter at UMD AIML Club on fine-tuning Llama 3.1 3B with Unsloth, SFT, and LoRA concepts.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Introduction to PyTorch</h3>
+                    <p>Presented a 2-hour workshop for 40+ participants covering model training, optimization, and backpropagation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
@@ -330,7 +494,7 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
-                            <p>dahongluo04@gmail.com</p>
+                            <p>dahong@umd.edu</p>
                         </div>
                     </div>
                     <div class="contact-item">
