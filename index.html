@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dahong Luo | Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" crossorigin href="/dappon4.github.io/assets/index-BHXpHSk3.css">
 </head>
 <body>
     <!-- Remove or comment out the original header -->
@@ -60,6 +60,14 @@
                     <div class="side-nav-dot"></div>
                     <div class="side-nav-label">Projects</div>
                 </div>
+                <div class="side-nav-item" data-section="research" onclick="document.getElementById('research').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">
+                    <div class="side-nav-dot"></div>
+                    <div class="side-nav-label">Research</div>
+                </div>
+                <div class="side-nav-item" data-section="highlights" onclick="document.getElementById('highlights').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">
+                    <div class="side-nav-dot"></div>
+                    <div class="side-nav-label">Highlights</div>
+                </div>
                 <div class="side-nav-item" data-section="contact" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">
                     <div class="side-nav-dot"></div>
                     <div class="side-nav-label">Contact</div>
@@ -73,19 +81,19 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Dahong Luo</h1>
-                    <h2>Software Engineer & ML Enthusiast</h2>
-                    <p>Passionate about creating innovative solutions through code and machine learning</p>
+                    <h2>Software Engineer, ML Researcher & Builder</h2>
+                    <p>Computer Science @ UMD focused on audio processing, generative AI, large language models, and computer vision.</p>
                     <div class="cta-buttons">
                         <a href="#projects" class="btn primary-btn">View My Work</a>
                         <a href="#contact" class="btn primary-btn">Get In Touch</a>
-                        <a href="https://drive.google.com/file/d/1QStkgBAUKU3b5BwPOtO2ZTSc7bMyNFHp/view?usp=sharing" target="_blank" class="btn resume-btn">
+                        <a href="https://drive.google.com/file/d/1huhqOPyUdjk5mFInkWNVZkw5DqWtC6ou/view?usp=sharing" target="_blank" class="btn resume-btn">
                             <i class="fas fa-file-alt"></i> Resume
                         </a>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="profile-img-container">
-                        <img src="assets/profile.jpg" alt="Dahong Luo" id="profile-img">
+                        <img src="/dappon4.github.io/assets/profile-Dh_A_GdJ.jpg" alt="Dahong Luo" id="profile-img">
                     </div>
                 </div>
             </div>
@@ -97,33 +105,11 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <p>
-                    I'm a Computer Science student at the University of Maryland with a passion for creative problem-solving and technology. 
-                    My approach combines innovation with patience—I believe in connecting simple elements in innovative ways to develop unique 
-                    solutions, whether through programming or collaborative projects. With experience in machine learning, software development, 
-                    and a multilingual background, I'm dedicated to making meaningful contributions to the tech world.
+                    I'm a Computer Science student at the University of Maryland (Math minor, GPA 3.87/4.0) with hands-on experience across
+                    machine learning research, full-stack software engineering, and hackathon product development.
+                    I currently work on compact neural audio codecs for low-power devices, and I enjoy building practical systems that connect
+                    strong modeling with real-world deployment.
                 </p>
-                
-                <!-- Core Values Section -->
-                <div class="core-values">
-                    <h3 class="values-title">My Core Values</h3>
-                    <div class="values-container">
-                        <div class="value-card">
-                            <div class="value-icon">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <h4>Creativity</h4>
-                            <p>My passion for creativity began in childhood with LEGO blocks, where I discovered that simple elements could be combined to create complex structures. This translated seamlessly to programming, where I view code as another medium for creative expression. Through hackathons and collaborative projects, I've learned that creativity is about connecting basic elements in innovative ways to develop unique solutions to real-world challenges.</p>
-                        </div>
-                        
-                        <div class="value-card">
-                            <div class="value-icon">
-                                <i class="fas fa-hourglass-half"></i>
-                            </div>
-                            <h4>Patience</h4>
-                            <p>Facing complex subjects like machine learning and mathematical modeling taught me that true understanding requires persistence. By methodically exploring background information, iterating through concepts, and seeking mentorship, I've developed the patience to approach problems thoroughly. This patience allows me to look beyond surface-level issues to address root causes, leading to more effective and detailed solutions in my work.</p>
-                        </div>
-                    </div>
-                </div>
                 
                 <!-- Removed personal-info section -->
             </div>
@@ -136,15 +122,27 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
+                    <div class="timeline-date">Sep 2025 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Student Software Engineer</h3>
+                        <h4>University of Maryland, Engineering IT</h4>
+                        <ul>
+                            <li>Developing a platform for university makerspaces to manage equipment access, safety permissions, and machine usage</li>
+                            <li>Implemented Flask backend + React frontend with secure authentication and streamlined student workflows</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
                     <div class="timeline-date">June 2024 - Aug 2024</div>
                     <div class="timeline-content">
                         <h3>Software Engineering Intern</h3>
                         <h4>IZAI Corp</h4>
                         <ul>
-                            <li>Created a RAG system using BM42 Hybrid Search, with Flask and Llama Index</li>
-                            <li>Deployed an Azure web app with GitHub Actions CI/CD</li>
-                            <li>Helped the development of the TTS model from an open-source model MetaVoice</li>
-                            <li>Authored and published multiple in-depth technical blogs, focusing on AI tools and Machine Learning techniques</li>
+                            <li>Designed and implemented a RAG system using BM42 Hybrid Search with Flask + LlamaIndex</li>
+                            <li>Deployed a production React/Flask app on Azure using GitHub Actions CI/CD</li>
+                            <li>Contributed to multilingual TTS by fine-tuning MetaVoice on the Japanese ReazonSpeech dataset</li>
+                            <li>Performed preprocessing, augmentation, and quantization to improve robustness and inference speed</li>
                         </ul>
                     </div>
                 </div>
@@ -155,8 +153,9 @@
                         <h3>Software Engineering Intern</h3>
                         <h4>InfoDeliver Corp</h4>
                         <ul>
-                            <li>Based on an open-source project, developed an LLM agent using GPT-4 Vision, which analyzes the screen and takes appropriate actions according to the instructions</li>
-                            <li>Annotated data and trained YOLOv7 model to detect web components such as buttons and input boxes</li>
+                            <li>Developed an LLM-based agentic automation pipeline with GPT-4 Vision for UI perception and autonomous action</li>
+                            <li>Annotated and curated YOLOv7 data for high-precision web element detection (buttons, text boxes, dropdowns)</li>
+                            <li>Integrated perception, reasoning, and action modules with real-time voice interaction for dynamic task updates</li>
                         </ul>
                     </div>
                 </div>
@@ -174,8 +173,8 @@
                     <div class="timeline-content">
                         <h3>University of Maryland, College Park</h3>
                         <h4>Bachelor's program, Computer Science major, Math minor</h4>
-                        <p>Honors Program, GPA of 3.81</p>
-                        <p>Dean's List (Fall 2023 & Spring 2024)</p>
+                        <p>Honors Program, GPA 3.87/4.0</p>
+                        <p>Expected Graduation: May 2026</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -183,7 +182,7 @@
                     <div class="timeline-date">Apr 2023 - Aug 2023</div>
                     <div class="timeline-content">
                         <h3>University of Tokyo</h3>
-                        <h4>Bachelor's program, Science</h4>
+                        <h4>Bachelor's program, Natural Sciences (Transferred)</h4>
                     </div>
                 </div>
             </div>
@@ -195,17 +194,21 @@
             <h2 class="section-title">Skills</h2>
             <div class="skills-container">
                 <div class="skill-category">
-                    <h3>Lingual Skills</h3>
+                    <h3>Interests</h3>
                     <div class="skill-pills">
-                        <span>Japanese</span>
-                        <span>English</span>
-                        <span>Mandarin</span>
+                        <span>Audio Processing</span>
+                        <span>Signal Processing</span>
+                        <span>Generative AI</span>
+                        <span>Large Language Models</span>
+                        <span>Computer Vision</span>
+                        <span>Natural Language Processing</span>
+                        <span>Quantum Machine Learning</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Programming Languages</h3>
+                    <h3>Languages</h3>
                     <div class="skill-pills">
-                        <span>Python (5+ years)</span>
+                        <span>Python (7+ years)</span>
                         <span>C</span>
                         <span>C++</span>
                         <span>Java</span>
@@ -219,14 +222,19 @@
                         <span>PyTorch</span>
                         <span>TensorFlow</span>
                         <span>Keras</span>
+                        <span>Qiskit</span>
+                        <span>PennyLane</span>
                         <span>NumPy</span>
                         <span>scikit-learn</span>
                         <span>JAX</span>
-                        <span>Pandas</span>
+                        <span>pandas</span>
                         <span>MATLAB</span>
-                        <span>Transformer</span>
+                        <span>Transformers</span>
                         <span>YOLO</span>
-                        <span>Deep Q Network</span>
+                        <span>Reinforcement Learning</span>
+                        <span>Llama</span>
+                        <span>LangChain</span>
+                        <span>Unsloth</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -244,6 +252,14 @@
                         <span>Hugging Face</span>
                     </div>
                 </div>
+                <div class="skill-category">
+                    <h3>Languages I Speak</h3>
+                    <div class="skill-pills">
+                        <span>Japanese</span>
+                        <span>English</span>
+                        <span>Mandarin</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -251,248 +267,274 @@
     <section id="projects">
         <div class="container">
             <h2 class="section-title">Projects</h2>
-            
-            <!-- Add search functionality -->
-            <div class="project-search-container">
-                <input type="text" id="projectSearch" class="project-search-input" placeholder="Search projects by name, keywords, or tags...">
+            <div class="projects-toolbar">
+                <label for="project-search" class="sr-only">Search projects</label>
+                <input
+                    type="search"
+                    id="project-search"
+                    class="project-search-input"
+                    placeholder="Search projects by title, tags, or keywords..."
+                    aria-label="Search projects"
+                >
             </div>
-            
-            <div class="projects-grid" id="projectsGrid">
-                <div class="project-card" data-tags="lstm sound audio research machine-learning pytorch">
-                    <div class="project-content">
-                        <h3>LSTM Sound Event Detection Research</h3>
-                        <p class="project-meta">Group Project, Dec 2024</p>
-                        <p>Conducted research using LSTM for Sound Event Detection that doesn't rely on future data. Wrote paper as first author, implemented data processing pipeline, and conducted ablation studies.</p>
-                        <div class="project-footer">
-                            <div class="project-tags">
-                                <span class="project-tag">LSTM</span>
-                                <span class="project-tag">Research</span>
-                                <span class="project-tag">PyTorch</span>
-                                <span class="project-tag">Audio</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/dappon4/SED_LSTM" target="_blank" class="btn small-btn">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-tags="vision-language-model mathematics llm llama fine-tuning machine-learning">
-                    <div class="project-content">
-                        <h3>Mathematical Figure Transcriber VLM</h3>
-                        <p class="project-meta">Group Project, Dec 2024</p>
-                        <p>Collected and cleaned a dataset of 788 mathematical images and corresponding transcriptions from the Mathverse dataset. Fine-tuned Llama 3.2 11B to improve the accuracy of transcribing mathematical figures, including complex handwritten notes and digital math figures.</p>
-                        <div class="project-footer">
-                            <div class="project-tags">
-                                <span class="project-tag">VLM</span>
-                                <span class="project-tag">Llama</span>
-                                <span class="project-tag">Fine-tuning</span>
-                                <span class="project-tag">Mathematics</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://drive.google.com/file/d/1iED5CNDGjr7HGID_SiBL5QXujVLOpkYC/view?usp=sharing" target="_blank" class="btn small-btn">Presentation</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-tags="hackathon rag llm agent machine-learning pytorch">
-                    <div class="project-content">
-                        <h3>Agent-Based ELMS Copilot</h3>
-                        <p class="project-meta">Group Project, Oct 2024</p>
-                        <p>Grand prize winner at hackUMBC 2024. Created a multi-agent RAG system with hallucination prevention and built a study suggestion model using PyTorch trained on synthetic data.</p>
-                        <div class="project-footer">
-                            <div class="project-tags">
-                                <span class="project-tag">Hackathon</span>
-                                <span class="project-tag">RAG</span>
-                                <span class="project-tag">LLM</span>
-                                <span class="project-tag">Agent</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://devpost.com/software/to-be-decided-og94ij" target="_blank" class="btn small-btn">Devpost</a>
-                                <a href="https://github.com/NSP909/hackUMBC" target="_blank" class="btn small-btn">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-tags="gan generative-ai conditional-gan pytorch image-generation">
-                    <div class="project-content">
-                        <h3>Embedded Conditional GAN</h3>
-                        <p class="project-meta">Personal Project, Oct 2024</p>
-                        <p>Recreated Generated Adversarial Network from the original paper. Improved the model by adding an Embedding Layer to generate images of arbitrary classes. Created a system that creates a seamless image transition video by gradually modifying the embedded values.</p>
-                        <div class="project-footer">
-                            <div class="project-tags">
-                                <span class="project-tag">GAN</span>
-                                <span class="project-tag">PyTorch</span>
-                                <span class="project-tag">Generative AI</span>
-                                <span class="project-tag">Embedding</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/dappon4/Embedded_Conditional_GAN" target="_blank" class="btn small-btn">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-tags="diffusion unet pytorch generative-ai image-generation">
+            <div class="projects-grid">
+                <div class="project-card" data-tags="pytorch diffusion unet generative-ai computer-vision">
                     <div class="project-content">
                         <h3>Cat Diffusion Model</h3>
                         <p class="project-meta">Personal Project, Mar 2025</p>
-                        <p>Created and trained UNet-based diffusion model to generate 32x32 images of cats. Collected and processed cat images from a Kaggle dataset. Trained the model on 30k images for 15 epochs, achieving 0.011 MSE loss with the test data.</p>
-                        <div class="project-footer">
-                            <div class="project-tags">
-                                <span class="project-tag">Diffusion</span>
-                                <span class="project-tag">UNet</span>
-                                <span class="project-tag">PyTorch</span>
-                                <span class="project-tag">Generative AI</span>
-                            </div>
-                            <div class="project-links">
-                            </div>
+                        <p>Implemented a <strong>diffusion pipeline</strong> in <strong>PyTorch</strong> with a <strong>U-Net</strong> backbone to generate cat images and study denoising behavior across timesteps.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">Diffusion</span>
+                            <span class="project-tag">U-Net</span>
+                            <span class="project-tag">Generative AI</span>
                         </div>
                     </div>
                 </div>
-                <div class="project-card" data-tags="quantum-computing neural-network qiskit classification autoencoder">
+                <div class="project-card" data-tags="pytorch qiskit quantum-ml autoencoder">
                     <div class="project-content">
                         <h3>Quantum Neural Network</h3>
                         <p class="project-meta">Personal Project, Mar 2025</p>
-                        <p>Created Quantum Neural Network using Qiskit to perform classification tasks. Trained AutoEncoder to compress input data, enabling the quantum algorithm to capture more useful information. Constructed Quantum Neural Network using ZZFeaturemap and RealAmplitude with 8 qubits system.</p>
-                        <div class="project-footer">
-                            <div class="project-tags">
-                                <span class="project-tag">Quantum</span>
-                                <span class="project-tag">Qiskit</span>
-                                <span class="project-tag">Neural Network</span>
-                                <span class="project-tag">AutoEncoder</span>
-                            </div>
-                            <div class="project-links">
-                            </div>
+                        <p>Built <strong>hybrid quantum-classical models</strong> using <strong>Qiskit</strong> feature maps and variational circuits to explore learning behavior on structured datasets.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">Qiskit</span>
+                            <span class="project-tag">Quantum ML</span>
+                            <span class="project-tag">Autoencoder</span>
                         </div>
                     </div>
                 </div>
-                <div class="project-card" data-tags="segmentation sam2 fine-tuning pytorch medical computer-vision">
+                <div class="project-card" data-tags="pytorch sam2 segmentation computer-vision">
                     <div class="project-content">
                         <h3>Fine-Tuning SAM2</h3>
                         <p class="project-meta">Personal Project, Mar 2025</p>
-                        <p>Fine-tuned Segmentation Anything Model 2 by Meta to segment brain tumors given the CT scan of brains, achieving 0.64 validation IoU training for 12 epochs. Performed Exploratory Data Analysis using a dataset from Kaggle.</p>
-                        <div class="project-footer">
-                            <div class="project-tags">
-                                <span class="project-tag">SAM2</span>
-                                <span class="project-tag">Fine-tuning</span>
-                                <span class="project-tag">Segmentation</span>
-                                <span class="project-tag">Medical</span>
-                            </div>
-                            <div class="project-links">
-                            </div>
+                        <p><strong>Fine-tuned SAM2</strong> on domain-specific <strong>segmentation</strong> tasks using <strong>PyTorch</strong> to improve mask quality on challenging inputs.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">SAM2</span>
+                            <span class="project-tag">Segmentation</span>
+                            <span class="project-tag">Computer Vision</span>
                         </div>
                     </div>
                 </div>
-                <div class="project-card" data-tags="neural-network numpy deep-learning transformer backpropagation">
+                <div class="project-card" data-tags="pytorch unsloth llama vlm ocr">
+                    <div class="project-content">
+                        <h3>Mathematical Figure Transcriber VLM</h3>
+                        <p class="project-meta">Personal Project, Dec 2024</p>
+                        <p>Trained and adapted a <strong>vision-language model</strong> stack using <strong>Unsloth + Llama</strong> to transcribe mathematical figures and preserve structural meaning.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">Unsloth</span>
+                            <span class="project-tag">Llama</span>
+                            <span class="project-tag">VLM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-tags="pytorch gan embedding generative-ai">
+                    <div class="project-content">
+                        <h3>Embedded Conditional GAN</h3>
+                        <p class="project-meta">Personal Project, Oct 2024</p>
+                        <p>Developed an <strong>embedding-conditional GAN</strong> architecture in <strong>PyTorch</strong> for controllable generation with improved latent conditioning.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">GAN</span>
+                            <span class="project-tag">Embedding</span>
+                            <span class="project-tag">Generative AI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/dappon4" target="_blank" class="btn small-btn">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-tags="lstm sound-event-detection audio-processing pytorch research">
+                    <div class="project-content">
+                        <h3>LSTM Sound Event Detection Research</h3>
+                        <p class="project-meta">Group Project, Dec 2024</p>
+                        <p>Conducted research using <strong>LSTM</strong> for <strong>Sound Event Detection</strong> that doesn't rely on future data. Wrote paper as first author, implemented data processing pipeline, and conducted ablation studies.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">LSTM</span>
+                            <span class="project-tag">Audio Processing</span>
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">Research</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/dappon4/SED_LSTM" target="_blank" class="btn small-btn">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-tags="rag multi-agent llm flask react pytorch hackathon">
+                    <div class="project-content">
+                        <h3>Agent-Based ELMS Copilot</h3>
+                        <p class="project-meta">Group Project, Oct 2024</p>
+                        <p>Grand prize winner at hackUMBC 2024. Created a <strong>multi-agent RAG system</strong> with hallucination prevention and built a study suggestion model using <strong>PyTorch</strong> trained on synthetic data.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">RAG</span>
+                            <span class="project-tag">Multi-Agent</span>
+                            <span class="project-tag">LLM</span>
+                            <span class="project-tag">Hackathon</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://devpost.com/software/to-be-decided-og94ij" target="_blank" class="btn small-btn">Devpost</a>
+                            <a href="https://github.com/NSP909/hackUMBC" target="_blank" class="btn small-btn">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-tags="numpy autograd transformer deep-learning framework">
                     <div class="project-content">
                         <h3>NumPy Neural Network</h3>
                         <p class="project-meta">Personal Project, June 2024</p>
-                        <p>Built a PyTorch-inspired deep learning framework using only NumPy with custom layers, AutoGrad-like backpropagation, and full Transformer architecture, achieving 96.2% accuracy on MNIST.</p>
-                        <div class="project-footer">
-                            <div class="project-tags">
-                                <span class="project-tag">NumPy</span>
-                                <span class="project-tag">Neural Network</span>
-                                <span class="project-tag">Transformer</span>
-                                <span class="project-tag">AutoGrad</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/dappon4/Neural_Network_Implementation" target="_blank" class="btn small-btn">GitHub</a>
-                            </div>
+                        <p>Built a <strong>PyTorch-inspired deep learning framework</strong> using only <strong>NumPy</strong> with custom layers, AutoGrad-like backpropagation, and full <strong>Transformer</strong> architecture, achieving 96.2% accuracy on MNIST.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">NumPy</span>
+                            <span class="project-tag">AutoGrad</span>
+                            <span class="project-tag">Transformer</span>
+                            <span class="project-tag">Framework</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/dappon4/Neural_Network_Implementation" target="_blank" class="btn small-btn">GitHub</a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card" data-tags="data-analysis nlp distilbert lightgbm pytorch kaggle">
-                    <div class="project-content">
-                        <h3>Cyberpunk 2077 Steam Review Analysis</h3>
-                        <p class="project-meta">Group Project, May 2024</p>
-                        <p>Performed exploratory data analysis on steam review data from a Kaggle dataset. Trained DistilBERT model to predict the upvote/downvote from review text, achieving 94% accuracy. Trained Gradient Boosted Tree to regress the future upvotes of a comment with 2.956 MAE loss on test data.</p>
-                        <div class="project-footer">
-                            <div class="project-tags">
-                                <span class="project-tag">NLP</span>
-                                <span class="project-tag">DistilBERT</span>
-                                <span class="project-tag">LightGBM</span>
-                                <span class="project-tag">Data Analysis</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Loldude0/CMSC320-cyberpunk/tree/main" target="_blank" class="btn small-btn">GitHub</a>
-                                <a href="https://loldude0.github.io/CMSC320-cyberpunk/" target="_blank" class="btn small-btn">Report</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-tags="hackathon llm ocr medical translation webapp">
+                <div class="project-card" data-tags="llm sql ocr translation flask react hackathon">
                     <div class="project-content">
                         <h3>Medical Data Compilation System</h3>
                         <p class="project-meta">Group Project, Feb 2024</p>
-                        <p>1st place winner in Hacklytics 2024. Created a web app for managing medical documents with LLM-based pipelines for OCR, translation, and SQL database query handling.</p>
-                        <div class="project-footer">
-                            <div class="project-tags">
-                                <span class="project-tag">Hackathon</span>
-                                <span class="project-tag">Medical</span>
-                                <span class="project-tag">OCR</span>
-                                <span class="project-tag">LLM</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://devfolio.co/projects/medicompile-32c2" target="_blank" class="btn small-btn">Devfolio</a>
-                                <a href="https://github.com/NSP909/Asclepius" target="_blank" class="btn small-btn">GitHub</a>
-                            </div>
+                        <p>1st place winner in Hacklytics 2024. Created a web app for managing medical documents with <strong>LLM-based pipelines</strong> for <strong>OCR</strong>, translation, and <strong>SQL</strong> database query handling.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">LLM</span>
+                            <span class="project-tag">SQL</span>
+                            <span class="project-tag">OCR</span>
+                            <span class="project-tag">Hackathon</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://devfolio.co/projects/medicompile-32c2" target="_blank" class="btn small-btn">Devfolio</a>
+                            <a href="https://github.com/NSP909/Asclepius" target="_blank" class="btn small-btn">GitHub</a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card" data-tags="gesture-recognition hackathon computer-vision whisper openCV voice-control">
-                    <div class="project-content">
-                        <h3>Gesture Recognition Control System</h3>
-                        <p class="project-meta">Group Project, Feb 2024</p>
-                        <p>1st Place of Spark of Genius Prize at Hack@CEWIT. Developed JarWiz, an innovative gesture and action recognition software enabling intuitive computer control through hand gestures and voice commands. Integrated Whisper model to support voice commands.</p>
-                        <div class="project-footer">
-                            <div class="project-tags">
-                                <span class="project-tag">Gesture Recognition</span>
-                                <span class="project-tag">Hackathon</span>
-                                <span class="project-tag">Computer Vision</span>
-                                <span class="project-tag">Whisper</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://devpost.com/software/jarwiz" target="_blank" class="btn small-btn">Devpost</a>
-                                <a href="https://github.com/Swastik3/Jarvis" target="_blank" class="btn small-btn">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-tags="reinforcement-learning pacman pygame dqn pytorch game">
+                <!-- New Project: Reinforcement Learning Pacman -->
+                <div class="project-card" data-tags="reinforcement-learning dqn pytorch pygame game-ai">
                     <div class="project-content">
                         <h3>Reinforcement Learning Pacman</h3>
                         <p class="project-meta">Personal Project, Mar 2024</p>
-                        <p>Designed an AI that autonomously learns to play Pacman using reinforcement learning. Engineered a fully functional Pacman game environment from scratch using Pygame with modular architecture for easy integration with AI agents. Developed a Deep Q Network (DQN) model with PyTorch.</p>
-                        <div class="project-footer">
-                            <div class="project-tags">
-                                <span class="project-tag">Reinforcement Learning</span>
-                                <span class="project-tag">Pygame</span>
-                                <span class="project-tag">DQN</span>
-                                <span class="project-tag">PyTorch</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/dappon4/pacman_rl" target="_blank" class="btn small-btn">GitHub</a>
-                            </div>
+                        <p>Designed an AI that autonomously learns to play Pacman using <strong>reinforcement learning</strong>. Engineered a fully functional Pacman game environment from scratch using <strong>Pygame</strong> with modular architecture for easy integration with AI agents. Developed a <strong>Deep Q Network (DQN)</strong> model with <strong>PyTorch</strong>.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Reinforcement Learning</span>
+                            <span class="project-tag">DQN</span>
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">Pygame</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/dappon4/pacman_rl" target="_blank" class="btn small-btn">GitHub</a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card" data-tags="audio classification hackathon yamnet pytorch webapp">
+                <!-- New Project: Machine Learning Audio Segmentation -->
+                <div class="project-card" data-tags="audio-classification yamnet pytorch flask react hackathon">
                     <div class="project-content">
                         <h3>Machine Learning Audio Segmentation</h3>
                         <p class="project-meta">Group Project, Jan 2024</p>
-                        <p>Won "Best Digital Forensics Related Hack" at Hoya Hacks 2024. Developed a web app to pinpoint sound timestamps in videos for faster investigations. Built and trained a YAMNet-inspired audio classifier in PyTorch with a custom audio-to-image preprocessing pipeline.</p>
-                        <div class="project-footer">
-                            <div class="project-tags">
-                                <span class="project-tag">Audio</span>
-                                <span class="project-tag">Classification</span>
-                                <span class="project-tag">Hackathon</span>
-                                <span class="project-tag">PyTorch</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://devpost.com/software/ctrl-f-my-audio" target="_blank" class="btn small-btn">Devpost</a>
-                                <a href="https://github.com/dappon4/ctrl-F-my-audio" target="_blank" class="btn small-btn">GitHub</a>
-                            </div>
+                        <p>Won "Best Digital Forensics Related Hack" at Hoya Hacks 2024. Developed a web app to pinpoint sound timestamps in videos for faster investigations. Built and trained a <strong>YAMNet-inspired audio classifier</strong> in <strong>PyTorch</strong> with a custom audio-to-image preprocessing pipeline.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Audio Classification</span>
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">Flask</span>
+                            <span class="project-tag">Hackathon</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://devpost.com/software/ctrl-f-my-audio" target="_blank" class="btn small-btn">Devpost</a>
+                            <a href="https://github.com/dappon4/ctrl-F-my-audio" target="_blank" class="btn small-btn">GitHub</a>
                         </div>
                     </div>
+                </div>
+            </div>
+            <p id="project-no-results" class="project-no-results" hidden>No projects match your search.</p>
+        </div>
+    </section>
+
+    <section id="research">
+        <div class="container">
+            <h2 class="section-title">Research Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Oct 2025 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Student Researcher, iCoSMoS Lab</h3>
+                        <h4>University of Maryland · Prof. Nirupam Roy</h4>
+                        <ul>
+                            <li>Developing compact neural audio codecs optimized for low-power microcontrollers</li>
+                            <li>Focusing on quantization and lightweight architectures for real-time compression/reconstruction</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Jun 2025 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Research Assistant</h3>
+                        <h4>University of Rochester · Prof. Zhiyao Duan</h4>
+                        <ul>
+                            <li>Integrated psychoacoustic codec ideas (MP3/OGG) into neural audio pipelines with Python tooling</li>
+                            <li>Developing U-Net based language-queried audio separation with joint audio-language embeddings</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Apr 2025 - Sep 2025</div>
+                    <div class="timeline-content">
+                        <h3>Research Assistant, VITA Lab</h3>
+                        <h4>UT Austin · Mentored by Hezhen Hu</h4>
+                        <ul>
+                            <li>Worked on PGSR-based 3D human reconstruction and proposed a Gaussian-Splatting-inspired term</li>
+                            <li>Built testing pipelines that reduced iteration counts by ~80% while improving detail fidelity</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Feb 2025 - Sep 2025</div>
+                    <div class="timeline-content">
+                        <h3>Research Assistant</h3>
+                        <h4>University of Maryland · Prof. Leo Zhicheng Liu</h4>
+                        <ul>
+                            <li>Explored GenAI-based research assistance and built RAG-based writing assistant workflows</li>
+                            <li>Built metadata-driven graph re-ranking to improve retrieval quality in an interactive UI</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="highlights">
+        <div class="container">
+            <h2 class="section-title">Hackathons & Workshops</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <h3>HackUMBC 2024</h3>
+                    <p>Grand Prize · Built an agent-based ELMS copilot with multi-check RAG and grade-aware study recommendations.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Hacklytics 2024</h3>
+                    <p>1st Place (Elevance Challenge) · Developed multilingual medical data pipelines from OCR and retrieval to SQL reasoning.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>HoyaHacks 2024</h3>
+                    <p>1st Place (Digital Forensics) · Built an audio event detector and React/Flask investigative web app.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Hack@CEWIT 2024</h3>
+                    <p>1st Place (Spark of Genius) · Created JarWiz for hybrid hand-gesture + voice-based computer control.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>LLM Fine-Tuning Workshop</h3>
+                    <p>Co-presenter at UMD AIML Club on fine-tuning Llama 3.1 3B with Unsloth, SFT, and LoRA concepts.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Introduction to PyTorch</h3>
+                    <p>Presented a 2-hour workshop for 40+ participants covering model training, optimization, and backpropagation.</p>
                 </div>
             </div>
         </div>
@@ -543,5 +585,43 @@
     </div>
 
     <script src="js/main.js"></script>
+    <script src="js/nav-fix.js"></script>
+    <script src="js/nav-debug.js"></script>
+    <script>
+        // Immediately add debug script
+        document.addEventListener('DOMContentLoaded', function() {
+            const debugPanel = document.getElementById('debug-panel');
+            const debugSideNavVisible = document.getElementById('debug-sidenav-visible');
+            const debugScrollPos = document.getElementById('debug-scroll-pos');
+            const debugHeroBottom = document.getElementById('debug-hero-bottom');
+            
+            // Show debug panel with keyboard shortcut (Ctrl+Shift+D)
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.shiftKey && e.key === 'D') {
+                    debugPanel.style.display = debugPanel.style.display === 'none' ? 'block' : 'none';
+                }
+            });
+            
+            // Update debug info
+            function updateDebug() {
+                const sideNav = document.querySelector('.side-nav');
+                const heroSection = document.getElementById('hero');
+                
+                debugSideNavVisible.textContent = window.getComputedStyle(sideNav).display;
+                debugScrollPos.textContent = window.scrollY;
+                
+                if (heroSection) {
+                    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+                    debugHeroBottom.textContent = heroBottom;
+                }
+            }
+            
+            // Update debug info on scroll
+            window.addEventListener('scroll', updateDebug);
+            
+            // Initial update
+            setTimeout(updateDebug, 500);
+        });
+    </script>
 </body>
 </html>
